@@ -103,6 +103,7 @@ class GetXdXrInfo(BaseParser):
             fenshu, xingquanjia = None, None
             if category == 1:
                 fenhong, peigujia, songzhuangu, peigu  = struct.unpack("<ffff", body_buf[pos: pos + 16])
+                fenhong = '%.2f' % fenhong
             elif category in [11, 12]:
                 (_, _, suogu, _) = struct.unpack("<IIfI", body_buf[pos: pos + 16])
             elif category in [13, 14]:
